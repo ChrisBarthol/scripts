@@ -8,7 +8,6 @@ rm -f Pictures/photo-of-the-day
 curl "http://photography.nationalgeographic.com/photography/photo-of-the-day/" -o "Pictures/photo-of-the-day"
 
 # get the photo url
-
 let line=`cat Pictures/photo-of-the-day | grep -n '<div class="primary_photo">' | cut -d':' -f1`+5
 url=`sed -n "$line p" Pictures/photo-of-the-day | cut -d' ' -f2 | cut -d '"' -f2`
 
