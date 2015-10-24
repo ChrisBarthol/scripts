@@ -12,4 +12,11 @@ let line=`cat Pictures/photo-of-the-day | grep -n '<div class="primary_photo">' 
 url=`sed -n "$line p" Pictures/photo-of-the-day | cut -d' ' -f2 | cut -d '"' -f2`
 
 # download the photo
-curl "${url:2}" -o "Pictures/photo-of-the-day"
+curl "${url:2}" -o "Pictures/wall.jpg"
+
+#Mac makes setting your background from bash a pain
+sqlite3 ~/Library/Application\ Support/Dock/desktoppicture.db "update data set value = 'Users/chrisbarthol/Pictures/wall.jpg'";
+killall Dock;
+
+#For Ubuntu
+#gsettings set org.gnome.desktop.background picture-uri 'file:///home/chrisbarthol/Pictures/wall.jpg'
