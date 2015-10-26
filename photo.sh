@@ -20,3 +20,8 @@ killall Dock;
 
 #For Ubuntu
 #gsettings set org.gnome.desktop.background picture-uri 'file:///home/chrisbarthol/Pictures/wall.jpg'
+
+#For XFCE
+#need to set each screen find them from: xfconf-query --channel xfce4-desktop --list
+# xfconf-query --channel xfce4-desktop --property /backdrop/screen0/monitor0/image-path --set /usr/Pictures/wall.jpg
+# xfconf-query --channel xfce4-desktop --property /backdrop/screen0/monitor1/image-path --set /usr/Pictures/wall.jpg
