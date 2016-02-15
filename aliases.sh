@@ -1,3 +1,7 @@
 alias sql='postgres -D /usr/local/var/postgres'
 alias sqlalt='pg_ctl -D /usr/local/var/postgres -l logfile start'
 alias red='redis-server /usr/local/etc/redis.conf'
+alias upgradeallpython='pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U'
+alias emberstart='ember server --proxy http://localhost:3000'
+alias uncommit='git reset --soft HEAD~'
+alias gitignore='git rm -r --cached .'
